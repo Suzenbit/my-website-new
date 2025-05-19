@@ -1,0 +1,80 @@
+/* ------------- Core reset & helpers ------------- */
+* { box-sizing:border-box; margin:0; padding:0; }
+body, button { font-family: system-ui, sans-serif; color:#fff; }
+a { text-decoration:none; color:inherit; }
+ul { list-style:none; }
+
+:root {
+  --bg1:#0f172a;  /* slate‑950 */
+  --bg2:#1e293b;  /* slate‑900 */
+  --card:#1e293b90;
+  --primary:#6366f1; /* indigo‑500 */
+  --primary-dark:#4f46e5;
+  --radius:1rem;
+}
+
+/* ------------- Background gradient ------------- */
+.bg-gradient { background:linear-gradient(135deg,var(--bg1),var(--bg2)); min-height:100vh; }
+
+/* ------------- Navbar ------------- */
+.navbar {
+  position:fixed; top:0; left:0; width:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1rem 2rem; backdrop-filter:blur(12px);
+  background:rgba(15,23,42,.6); z-index:1000;
+}
+.logo { font-size:1.5rem; font-weight:700; }
+.accent { color:var(--primary); }
+.menu { display:flex; gap:2rem; }
+.menu a:hover { color:var(--primary); }
+
+/* ------------- Buttons ------------- */
+.btn { padding:.5rem 1.25rem; border:none; border-radius:999px; cursor:pointer; background:#334155; }
+.btn.primary { background:var(--primary); }
+.btn.primary:hover { background:var(--primary-dark); }
+.btn.large { font-size:1.1rem; padding:1rem 2.5rem; }
+.btn.wide { width:100%; }
+
+.hamburger { font-size:1.5rem; background:none; border:none; color:#fff; }
+
+/* ------------- Sections ------------- */
+.section { padding:6rem 1.5rem; text-align:center; }
+.section.alt { background:rgba(30,41,59,.6); }
+.section h2 { font-size:2rem; margin-bottom:3rem; }
+
+.hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; max-width:52rem; margin-inline:auto; }
+.hero p  { max-width:40rem; margin:0 auto 2rem; color:#cbd5e1; }
+
+/* ------------- Grid / Cards ------------- */
+.grid { display:grid; gap:2rem; margin-inline:auto; max-width:80rem; }
+@media (min-width:768px){ .grid { grid-template-columns:repeat(3,1fr);} }
+
+.card {
+  background:var(--card); border-radius:var(--radius);
+  padding:2rem; text-align:left; box-shadow:0 4px 24px #0005;
+}
+.card h3 { font-size:1.25rem; margin-bottom:.75rem; }
+.card p { color:#cbd5e1; line-height:1.5; }
+
+/* ------------- Pricing cards ------------- */
+.price { text-align:center; }
+.amount { font-size:2rem; margin:.5rem 0 1rem; }
+.amount span { font-size:.9rem; font-weight:400; }
+.price ul { margin:1rem 0 2rem; }
+.highlight { border:2px solid var(--primary); }
+
+/* ------------- FAQ ------------- */
+.faq details { background:var(--card); border-radius:var(--radius); padding:1rem 1.5rem; margin-bottom:1rem; }
+.faq summary { cursor:pointer; font-weight:600; }
+
+/* ------------- Footer ------------- */
+.footer { text-align:center; padding:3rem 1rem; color:#94a3b8; font-size:.875rem; }
+
+/* ------------- Responsive helpers ------------- */
+@media (max-width:767px){
+  .hide‑sm{display:none;}
+  .show‑sm{display:block;}
+  #menu{display:none; flex-direction:column; gap:1.5rem; margin-top:1rem;}
+  #menu.open{display:flex;}
+}
+@media (min-width:768px){ .show‑sm{display:none;} }
